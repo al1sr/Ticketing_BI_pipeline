@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow>
+  <name>00.Todo</name>
+  <name_sync_with_filename>Y</name_sync_with_filename>
+  <description/>
+  <extended_description/>
+  <workflow_version/>
+  <created_user>-</created_user>
+  <created_date>2026/04/15 19:28:08.946</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2026/04/15 19:28:08.946</modified_date>
+  <parameters>
+    </parameters>
+  <actions>
+    <action>
+      <name>Start</name>
+      <description/>
+      <type>SPECIAL</type>
+      <attributes/>
+      <DayOfMonth>1</DayOfMonth>
+      <doNotWaitOnFirstExecution>N</doNotWaitOnFirstExecution>
+      <hour>12</hour>
+      <intervalMinutes>60</intervalMinutes>
+      <intervalSeconds>0</intervalSeconds>
+      <minutes>0</minutes>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <weekDay>1</weekDay>
+      <parallel>N</parallel>
+      <xloc>50</xloc>
+      <yloc>50</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>Success</name>
+      <description/>
+      <type>SUCCESS</type>
+      <attributes/>
+      <parallel>N</parallel>
+      <xloc>864</xloc>
+      <yloc>48</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>no funciona</name>
+      <description/>
+      <type>DUMMY</type>
+      <attributes/>
+      <parallel>N</parallel>
+      <xloc>448</xloc>
+      <yloc>272</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>Abort workflow</name>
+      <description/>
+      <type>ABORT</type>
+      <attributes/>
+      <always_log_rows>N</always_log_rows>
+      <parallel>N</parallel>
+      <xloc>448</xloc>
+      <yloc>432</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>10.bronze.hpl</name>
+      <description/>
+      <type>PIPELINE</type>
+      <attributes/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <clear_files>N</clear_files>
+      <clear_rows>N</clear_rows>
+      <create_parent_folder>N</create_parent_folder>
+      <exec_per_row>N</exec_per_row>
+      <filename>/Users/carlosg/Desktop/alii/imf/M5/PRACTICA FINAL /50.PEC/hop tickets/10.bronze.hpl</filename>
+      <logext/>
+      <logfile/>
+      <loglevel>Basic</loglevel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <params_from_previous>N</params_from_previous>
+      <run_configuration>local</run_configuration>
+      <set_append_logfile>N</set_append_logfile>
+      <set_logfile>N</set_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <parallel>N</parallel>
+      <xloc>160</xloc>
+      <yloc>48</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>20.silver.hpl</name>
+      <description/>
+      <type>PIPELINE</type>
+      <attributes/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <clear_files>N</clear_files>
+      <clear_rows>N</clear_rows>
+      <create_parent_folder>N</create_parent_folder>
+      <exec_per_row>N</exec_per_row>
+      <filename>/Users/carlosg/Desktop/alii/imf/M5/PRACTICA FINAL /50.PEC/hop tickets/20.silver.hpl</filename>
+      <logext/>
+      <logfile/>
+      <loglevel>Basic</loglevel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <params_from_previous>N</params_from_previous>
+      <run_configuration>local</run_configuration>
+      <set_append_logfile>N</set_append_logfile>
+      <set_logfile>N</set_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <parallel>N</parallel>
+      <xloc>288</xloc>
+      <yloc>48</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>SQL</name>
+      <description/>
+      <type>SQL</type>
+      <attributes/>
+      <connection>MySQL Superstore</connection>
+      <sendOneStatement>N</sendOneStatement>
+      <sql>SET FOREIGN_KEY_CHECKS = 0;
+
+DELETE FROM ticketing.d_torre;
+DELETE FROM ticketing.d_clasf_servicio;
+DELETE FROM ticketing.d_tipo_estado;
+DELETE FROM ticketing.d_tipo_entorno;
+DELETE FROM ticketing.d_tipo_cump;
+
+DELETE FROM ticketing.d_servicio;
+DELETE FROM ticketing.d_tipo_servicio;
+DELETE FROM ticketing.d_estado;
+DELETE FROM ticketing.d_entorno;
+DELETE FROM ticketing.d_estado_cump;
+DELETE FROM ticketing.d_prioridad;
+
+DELETE FROM ticketing.f_ticket;
+
+SET FOREIGN_KEY_CHECKS = 1;</sql>
+      <sqlfilename/>
+      <sqlfromfile>N</sqlfromfile>
+      <useVariableSubstitution>N</useVariableSubstitution>
+      <parallel>N</parallel>
+      <xloc>384</xloc>
+      <yloc>48</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>30.dims.hpl</name>
+      <description/>
+      <type>PIPELINE</type>
+      <attributes/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <clear_files>N</clear_files>
+      <clear_rows>N</clear_rows>
+      <create_parent_folder>N</create_parent_folder>
+      <exec_per_row>N</exec_per_row>
+      <filename>/Users/carlosg/Desktop/alii/imf/M5/PRACTICA FINAL /50.PEC/hop tickets/30.dims.hpl</filename>
+      <logext/>
+      <logfile/>
+      <loglevel>Basic</loglevel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <params_from_previous>N</params_from_previous>
+      <run_configuration>local</run_configuration>
+      <set_append_logfile>N</set_append_logfile>
+      <set_logfile>N</set_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <parallel>N</parallel>
+      <xloc>480</xloc>
+      <yloc>48</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>31.dims.hpl</name>
+      <description/>
+      <type>PIPELINE</type>
+      <attributes/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <clear_files>N</clear_files>
+      <clear_rows>N</clear_rows>
+      <create_parent_folder>N</create_parent_folder>
+      <exec_per_row>N</exec_per_row>
+      <filename>/Users/carlosg/Desktop/alii/imf/M5/PRACTICA FINAL /50.PEC/hop tickets/31.dims.hpl</filename>
+      <logext/>
+      <logfile/>
+      <loglevel>Basic</loglevel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <params_from_previous>N</params_from_previous>
+      <run_configuration>local</run_configuration>
+      <set_append_logfile>N</set_append_logfile>
+      <set_logfile>N</set_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <parallel>N</parallel>
+      <xloc>592</xloc>
+      <yloc>48</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>40.facts.hpl</name>
+      <description/>
+      <type>PIPELINE</type>
+      <attributes/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <clear_files>N</clear_files>
+      <clear_rows>N</clear_rows>
+      <create_parent_folder>N</create_parent_folder>
+      <exec_per_row>N</exec_per_row>
+      <filename>/Users/carlosg/Desktop/alii/imf/M5/PRACTICA FINAL /50.PEC/hop tickets/40.facts.hpl</filename>
+      <logext/>
+      <logfile/>
+      <loglevel>Basic</loglevel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <params_from_previous>N</params_from_previous>
+      <run_configuration>local</run_configuration>
+      <set_append_logfile>N</set_append_logfile>
+      <set_logfile>N</set_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <parallel>N</parallel>
+      <xloc>720</xloc>
+      <yloc>48</yloc>
+      <attributes_hac/>
+    </action>
+    <action>
+      <name>SQL 2</name>
+      <description/>
+      <type>SQL</type>
+      <attributes/>
+      <connection>MySQL Superstore</connection>
+      <sendOneStatement>N</sendOneStatement>
+      <sql>DELETE FROM ticketing.d_torre WHERE torre IS NULL OR torre = '';
+DELETE FROM ticketing.d_clasf_servicio WHERE clasf_servicio IS NULL OR clasf_servicio = '';
+DELETE FROM ticketing.d_tipo_estado WHERE tipo_estado IS NULL OR tipo_estado = '';
+DELETE FROM ticketing.d_tipo_entorno WHERE tipo_entorno IS NULL OR tipo_entorno = '';
+DELETE FROM ticketing.d_tipo_cump WHERE tipo_cump IS NULL OR tipo_cump = '';
+
+DELETE FROM ticketing.d_servicio WHERE servicio IS NULL OR servicio = '';
+DELETE FROM ticketing.d_prioridad WHERE prioridad IS NULL OR prioridad = '';
+DELETE FROM ticketing.d_estado WHERE estado IS NULL OR estado = '';
+DELETE FROM ticketing.d_entorno WHERE entorno IS NULL OR entorno = '';
+DELETE FROM ticketing.d_tipo_servicio WHERE tipo_servicio IS NULL OR tipo_servicio = '';
+DELETE FROM ticketing.d_estado_cump WHERE estado_cump IS NULL OR estado_cump = '';
+
+DELETE FROM ticketing.f_ticket WHERE id_ticket IS NULL;</sql>
+      <sqlfilename/>
+      <sqlfromfile>N</sqlfromfile>
+      <useVariableSubstitution>N</useVariableSubstitution>
+      <parallel>N</parallel>
+      <xloc>800</xloc>
+      <yloc>48</yloc>
+      <attributes_hac/>
+    </action>
+  </actions>
+  <hops>
+    <hop>
+      <from>Start</from>
+      <to>10.bronze.hpl</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>10.bronze.hpl</from>
+      <to>no funciona</to>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>no funciona</from>
+      <to>Abort workflow</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>10.bronze.hpl</from>
+      <to>20.silver.hpl</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>20.silver.hpl</from>
+      <to>no funciona</to>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>20.silver.hpl</from>
+      <to>SQL</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SQL</from>
+      <to>30.dims.hpl</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>30.dims.hpl</from>
+      <to>no funciona</to>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SQL</from>
+      <to>no funciona</to>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>30.dims.hpl</from>
+      <to>31.dims.hpl</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>31.dims.hpl</from>
+      <to>no funciona</to>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>31.dims.hpl</from>
+      <to>40.facts.hpl</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>40.facts.hpl</from>
+      <to>no funciona</to>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>40.facts.hpl</from>
+      <to>SQL 2</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>SQL 2</from>
+      <to>Success</to>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+  </hops>
+  <notepads>
+  </notepads>
+  <attributes/>
+</workflow>
